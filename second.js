@@ -26,11 +26,11 @@
 //     css: "world",
 // };
 // // console.log(obj.js[0]);
-
-// // не получается вывести через цикл, почему?
+// 
+// Вариант через цикл
 // for (const key in obj) {
-//     if (obj[key] === "jQuery") {
-//         console.log(obj[key]);        
+//     if (key === 'js') {
+//         console.log(obj[key][0]);        
 //     }
 // }
 
@@ -92,6 +92,46 @@
 
 // Задача 7: Написать функцию, которая получает в качестве аргумента массив. для расчета суммы четных чисел в массиве. Так же написать  новую функцию для расчета суммы нечетных чисел в массиве. 
 // Написать функцию, которая принимает как аргумент две полученные суммы и выводит наибольшее из них.
+let number = [1,2,3,4,5,6,7,8,9,10];
+
+getEven(number);
+
+function getEven(number){
+    let sumEven = 0;
+    for(let i = 0; i < number.length; i++ ){
+        if(number[i] % 2 === 0){
+            sumEven += number[i];           
+        }    
+    }
+    console.log(sumEven);
+    return sumEven;
+}
+
+getAdd(number);
+
+function getAdd(number){
+    let sumAdd = 0;
+    for(let i = 0; i < number.length; i++){
+        if(number[i] % 2 !== 0){
+            sumAdd += number[i];
+        } 
+    }
+    console.log(sumAdd);
+    return sumAdd;
+}
+
+function maxNum(sumEven, sumAdd){
+    if(sumEven > sumAdd){
+        console.log(sumEven);
+    } else{
+        console.log(sumAdd);
+    }
+}
+
+
+
+
+
 
 
 
